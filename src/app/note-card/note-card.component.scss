@@ -13,6 +13,7 @@
 
     .x-button {
       opacity: 1;
+      transform: scale(1);
       transition-delay: 0.35s;
     }
   }
@@ -40,6 +41,15 @@
   justify-content: center;
   align-items: center;
   color: red;
-  transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   opacity: 0;
+  transform: scale(0.35);
+
+  &:hover {
+    background-color: darken($light-red, 3%);
+  }
+
+  &:active {
+    background-color: darken($light-red, 5%);
+  }
 }
