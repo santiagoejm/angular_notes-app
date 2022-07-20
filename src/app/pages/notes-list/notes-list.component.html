@@ -3,6 +3,7 @@
     <div class="field">
       <p class="control has-icons-left">
         <input
+          #filterInput
           class="input"
           type="text"
           placeholder="Filter"
@@ -17,9 +18,9 @@
 
   <div class="notes-list">
     <app-note-card
-      *ngFor="let note of filteredNotes; let i = index"
-      [link]="i.toString()"
-      (delete)="deleteNote(i)"
+      *ngFor="let note of filteredNotes"
+      [link]="generateNoteUrl(note).toString()"
+      (delete)="deleteNote(note)"
       [title]="note.title"
       [body]="note.body"
     ></app-note-card>
