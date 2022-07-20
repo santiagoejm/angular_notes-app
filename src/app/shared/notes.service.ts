@@ -10,6 +10,10 @@ export class NotesService {
 
   constructor() { }
 
+  getAll() {
+    return this.notes;
+  }
+
   get(id: number) {
     return this.notes[id];
   }
@@ -33,6 +37,5 @@ export class NotesService {
   delete (id: number) {
     this.notes.splice(id, 1);
   }
-
 
 }
